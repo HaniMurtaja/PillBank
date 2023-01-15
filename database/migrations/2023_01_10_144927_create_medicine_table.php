@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('medicine', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('med_id');
+            $table->string('med_name', 110);
+            $table->unsignedBigInteger('med_cat_id');
+            $table->integer('med_purchase_price');
+            $table->integer('med_quantity');
+            $table->string('med_generic_name', 110);
+            $table->string('med_scientific_name', 110);
+            $table->date('med_expire_date');
             $table->timestamps();
+            $table->foreign('med_cat_id')
+                ->references('med_cat_id')->on('medicine_categories')
+                ->onDelete('cascade');
         });
     }
 

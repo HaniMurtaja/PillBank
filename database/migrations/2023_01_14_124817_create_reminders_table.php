@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reminders', function (Blueprint $table) {
-            $table->id();
+        Schema::create('reminder', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('user_id')->index();
+            $table->unsignedInteger('status_id')->default(1);
+            $table->string('name');
+            $table->string('title');
+            $table->dateTime('date')->nullable();
             $table->timestamps();
         });
     }

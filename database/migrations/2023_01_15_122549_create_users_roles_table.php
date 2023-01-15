@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('users_roles', function (Blueprint $table) {
+        $table->bigIncrements('role_id');
+         $table->string('role_name',110);
+          $table->string('role_details',110);
+          $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('users_roles');
     }
 };
