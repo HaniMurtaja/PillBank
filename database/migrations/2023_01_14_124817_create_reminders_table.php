@@ -19,6 +19,12 @@ return new class extends Migration
             $table->unsignedInteger('status_id')->default(1);
             $table->string('name');
             $table->string('title');
+            $table->integer('doses');
+            $table->integer('duration');
+            $table->string('times');
+            $table->integer('start_from');
+            $table->string('days_of_week');
+            $table->string('snooze');
             $table->dateTime('date')->nullable();
             $table->timestamps();
         });
