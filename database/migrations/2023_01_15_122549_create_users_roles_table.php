@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users_roles', function (Blueprint $table) {
-        $table->bigIncrements('role_id');
-         $table->string('role_name',110);
-          $table->string('role_details',110);
+          $table->bigIncrements('id');
+          $table->string('name');
+          $table->longText('permission');
           $table->timestamps();
         });
     }

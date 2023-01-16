@@ -14,14 +14,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('service', function (Blueprint $table) {
-            $table->bigIncrements('service_id');
-            $table->string('service_name', 100);
-            $table->integer('service_price');
-            $table->string('service_description', 110);
-            $table->string('service_phone', 45);
-            $table->string('service_image', 110);
-            $table->string('service_address', 110);
-            $table->string('service_category', 110);
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('icon')->nullable();
+            $table->string('lang')->nullable();
+            $table->string('categories_id');
+            $table->string('icon_type')->nullable();
+            $table->integer('sr_order',false,true)->nullable();
+            $table->string('img_icon')->nullable();
+            $table->string('image')->nullable();
+            $table->string('status')->nullable();
+            $table->string('price_plan')->nullable();
+            $table->text('meta_tag')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('excerpt')->nullable();
+            $table->text('description');
             $table->timestamps();
         });
     }
