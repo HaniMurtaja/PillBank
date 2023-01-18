@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('service', function (Blueprint $table) {
-            $table->bigIncrements('service_id');
-            $table->string('service_name');
+        Schema::create('order', function (Blueprint $table) {
+            $table->bigIncrements('user_id');
             $table->integer('service_price');
+            $table->integer('payment_method_id');
             $table->string('service_description');
-            $table->string('service_phone');
-            $table->string('service_image');
-            $table->string('service_address');
-            $table->string('service_category');
+            $table->datetime('arriving_date');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('order');
     }
 };

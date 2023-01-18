@@ -6,6 +6,7 @@ use App\Models\Reminder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class ReminderController extends Controller
 {

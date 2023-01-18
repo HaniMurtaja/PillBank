@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users_roles', function (Blueprint $table) {
-          $table->bigIncrements('id');
-          $table->string('name');
-          $table->longText('permission');
-          $table->timestamps();
+        Schema::create('payment_method', function (Blueprint $table) {
+            $table->integer('payment_method_id')->unsigned();
+            $table->integer('card_number');
+            $table->integer('expired_date');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_roles');
+        Schema::dropIfExists('payment_method');
     }
 };

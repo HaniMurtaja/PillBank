@@ -23,12 +23,10 @@ return new class extends Migration
             $table->string('address', 110);
             $table->string('profile', 110);
             $table->string('image', 110);
-            $table->unsignedBigInteger('role_id');
             $table->rememberToken();
             $table->timestamps();
           
-            $table->foreign('role_id')->references('role_id')->on('users_roles')->onDelete('cascade');
-            $table->timestamps();
+           
         });
     }
 

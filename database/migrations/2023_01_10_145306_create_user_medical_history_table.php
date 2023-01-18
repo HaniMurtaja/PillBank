@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('user_medical_history', function (Blueprint $table) {
             $table->id();
+            $table->string('disease_name');
+            $table->string('description');
+            $table->string('phone');
             $table->timestamps();
         });
     }
