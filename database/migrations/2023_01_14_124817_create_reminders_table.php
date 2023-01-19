@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('reminder', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->index();
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('status_id')->default(1);
             $table->string('name');
-            $table->string('title');
             $table->integer('doses');
             $table->integer('duration');
             $table->string('times');

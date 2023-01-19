@@ -15,9 +15,7 @@ return new class extends Migration
     {
         Schema::create('medicine', function (Blueprint $table) {
             $table->bigIncrements('med_id');
-            $table->string('med_name', 110);
             $table->unsignedBigInteger('med_cat_id');
-            $table->integer('med_purchase_price');
             $table->integer('med_quantity');
             $table->string('med_generic_name', 110);
             $table->string('med_scientific_name', 110);

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('payment_method', function (Blueprint $table) {
             $table->integer('payment_method_id')->unsigned();
+            $table->string('type');
             $table->integer('card_number');
             $table->integer('expired_date');
             $table->timestamps();

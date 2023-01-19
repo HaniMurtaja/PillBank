@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_docs', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('description');
-            $table->string('file');
+            $table->integer('user_id');
+            $table->integer('payment_method_id')->unsigned();
+            $table->datetime('subsription_date');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_docs');
+        Schema::dropIfExists('subscriptions');
     }
 };

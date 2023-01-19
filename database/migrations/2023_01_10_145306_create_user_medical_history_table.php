@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('disease_name');
             $table->string('description');
-            $table->string('phone');
             $table->timestamps();
         });
     }

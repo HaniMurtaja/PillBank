@@ -58,5 +58,13 @@ class User extends Authenticatable
     {
         return $date->format('Y-m-d H:i:s');
     }
+    public function users()
+    {
+        return $this->belongsToOne(User::class, 'user_id');
+    }
+    public function care()
+    {
+        return $this->belongsToMany(User::class, 'care_id');
+    }
 
 }
