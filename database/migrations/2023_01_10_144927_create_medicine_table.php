@@ -21,9 +21,7 @@ return new class extends Migration
             $table->string('med_scientific_name', 110);
             $table->date('med_expire_date');
             $table->timestamps();
-            $table->foreign('med_cat_id')
-                ->references('med_cat_id')->on('medicine_categories')
-                ->onDelete('cascade');
+           
         });
     }
 
