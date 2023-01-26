@@ -17,6 +17,8 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::redirect('/', '/login');
 
+
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -26,24 +28,14 @@ Route::get('/home', function () {
 });
  
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
- 
-
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('google')->user();
- 
-    
-});
-
-Route::get('email-verification/error', 'Auth\RegisterController@getVerificationError')->name('email-verification.error');
-
-Route::get('email-verification/check/{token}', 'Auth\RegisterController@getVerification')->name('email-verification.check');
+Route::get('userVerification/{token}', [App\Http\Controllers\UserVerificationController::class, 'approve'])->name('userVerification');
+Auth::routes();
 
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+   
         // Permissions
         Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
         Route::resource('permissions', 'PermissionsController');
@@ -58,3 +50,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
 });
+

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_health', function (Blueprint $table) {
-            $table->id();
+         
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('gender');
