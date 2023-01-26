@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class RolesController extends Controller
+class RoleController extends Controller
 {
     public function index()
     {

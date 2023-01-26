@@ -13,16 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_health', function (Blueprint $table) {
-            $table->id();
+        Schema::create('user_healths', function (Blueprint $table) {
+
+         
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('careby_id');
             $table->string('name');
             $table->string('gender');
-            $table->integer('age');
+            $table->date('dob');
             $table->string('phone');
             $table->string('blood_pressure');
             $table->string('blood_group');
             $table->float('height');
-            $table->string('weight');
+            $table->float('weight');
             $table->string('bmI');
             $table->string('total_cholestrol');
             $table->string('LDL_cholestrol');
@@ -41,6 +45,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_health');
+        Schema::dropIfExists('user_healths');
     }
 };

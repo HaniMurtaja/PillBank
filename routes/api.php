@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\ReminderController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,7 +25,7 @@ Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 Route::post('/forgotPassword', [UserController::class, 'forgotPassword']);
-Route::post('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [UserController::class, 'profile']);
 Route::post('/logout', [UserController::class, 'logout']);
 Route::post('/changePassword', [UserController::class, 'changePassword']);
 Route::post('/editProfile', [UserController::class, 'editProfile']);

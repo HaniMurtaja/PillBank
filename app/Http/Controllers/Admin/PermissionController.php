@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use App\Models\Role;
 use Gate;
 
 
-class PermissionsController extends Controller
+class PermissionController extends Controller
 {
 
     public function index()

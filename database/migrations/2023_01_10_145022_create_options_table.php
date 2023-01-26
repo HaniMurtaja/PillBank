@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('options', function (Blueprint $table) {
-            $table->id();
             $table->integer('user_id');
             $table->bigInteger('service_id')->nullable();;
             $table->bigInteger('guide_id')->nullable();;
