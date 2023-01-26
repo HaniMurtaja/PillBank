@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('user_health', function (Blueprint $table) {
             $table->id();
-            $table->bigIncrements('id');
             $table->string('name');
             $table->string('gender');
             $table->integer('age');

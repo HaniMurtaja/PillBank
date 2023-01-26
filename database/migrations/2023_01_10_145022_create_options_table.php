@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->bigIncrements('service_id')->nullable();;
-            $table->bigIncrements('guide_id')->nullable();;
+            $table->bigInteger('service_id')->nullable();;
+            $table->bigInteger('guide_id')->nullable();;
             $table->timestamps();
         });
     }
